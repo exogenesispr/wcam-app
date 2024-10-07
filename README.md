@@ -14,7 +14,7 @@ At first focus on creating a non-automatized way to get the data from Blizzard A
 
 ### Modules
 - API (external api requests + db + server logic)
-- App (client interface + client logic) - React Native
+- App (client interface + client logic) - React Native + Expo
 - com (common utils and tools)
 
 ### Data Models
