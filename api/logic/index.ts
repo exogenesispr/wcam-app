@@ -1,8 +1,8 @@
-import getOAuthToken from './getOAuthToken'
 import getCharacterData from './getCharacterData'
+import getCharacterProfile from './getCharacterProfile'
 
 const logic = {
-    getOAuthToken,
+    getCharacterProfile,
     getCharacterData,
 }
 
