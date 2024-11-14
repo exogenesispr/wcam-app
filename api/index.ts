@@ -45,11 +45,13 @@ api.get('/character/:realm/:characterName', (req, res) => {
     const { realm, characterName } = req.params
 
     if (!wowClient) {
-        return res.status(500).json({ error: 'WoW Api client not initialized' })
+        return res.status(500).json({ error: 'WoW Api client NOT initialized' })
     }
 
     logic.getCharacterData(wowClient, realm, characterName)
-        .then((characterData) => res.json(characterData))
+        .then((characterData) => {
+            res.json(characterData)
+        })
         .catch((error) => {
             res.status(500).json('Error fetching character profile', error)
         })

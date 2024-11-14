@@ -4,12 +4,19 @@ export default function getCharacterProfile(wowClient, realm, characterName) {
         name: characterName,
         namespace: 'profile-classic-eu',
     })
-        .then(res => {
-            console.log('Character Data is: ', res.data)
-            return res.data
+        .then((res) => {
+            console.log('Full API response: ', res)
+            if (res.status === 200) {
+                return res.json()
+            }
+
+            if (res.status === 400) {
+                throw new Error('Token expired')
+            }
+
         })
         .catch(error => {
-            console.error('Error fetching character profile:', error)
+            console.error('Error fetching character profile:', error.message)
             throw error
         })
 }
